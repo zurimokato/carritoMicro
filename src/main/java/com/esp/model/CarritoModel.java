@@ -18,10 +18,11 @@ public class CarritoModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long identificadorCarrito;
     private Long  idUsuario;
+    private String moneda;
+    private BigDecimal total;
     @OneToMany
     private List<ProductoModel> productos;
 
-    private BigDecimal total;
 
 
 }

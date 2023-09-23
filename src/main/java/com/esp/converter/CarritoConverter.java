@@ -25,7 +25,8 @@ public class CarritoConverter {
         carritoDTO.setIdentificadorCarrito(entity.getIdentificadorCarrito());
         carritoDTO.setIdUsuario(entity.getIdUsuario());
         carritoDTO.setTotal(entity.getTotal());
-        if(entity.getProductos().size()>0){
+        carritoDTO.setMoneda(entity.getMoneda());
+        if(entity.getProductos()!=null&&!entity.getProductos().isEmpty()){
             carritoDTO.setProductos(ProductoConverter.entityToDTO(entity.getProductos()));
         }
 

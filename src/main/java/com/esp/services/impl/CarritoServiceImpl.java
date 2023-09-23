@@ -40,17 +40,22 @@ public class CarritoServiceImpl implements CarritoService {
         CarritoModel model= new CarritoModel();
         model.setIdUsuario(carrito.getIdUsuario());
         model.setTotal(carrito.getTotal());
+        model.setMoneda(carrito.getMoneda());
         final CarritoModel fCarrito =carritoRepository.save(model);
         if(!carrito.getProductos().isEmpty()){
           List<ProductoModel>productoModels=  carrito.getProductos().stream().map(productoDTO -> {
                 ProductoModel pModel= new ProductoModel();
                 pModel.setCantidad(productoDTO.getCantidad());
-                pModel.setIdProducto(productoDTO.getIdProducto());
+                pModel.setId(productoDTO.getId());
                 pModel.setCarrito(fCarrito);
-                pModel.setPrecio(productoDTO.getPrecio());
+                pModel.setValor(productoDTO.getValor());
+                pModel.setDije(productoDTO.getDije());
+                pModel.setTipo(productoDTO.getTipo());
+                pModel.setMaterial(productoDTO.getMaterial());
                 return pModel;
             }).toList();
           productoRepository.saveAll(productoModels);
+          fCarrito.setProductos(productoModels);
 
         }
 

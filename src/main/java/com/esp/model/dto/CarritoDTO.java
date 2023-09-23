@@ -16,4 +16,5 @@ public class CarritoDTO {
     private Long  idUsuario;
     private List<ProductoDTO> productos;
     private BigDecimal total;
+    private String moneda;
 }

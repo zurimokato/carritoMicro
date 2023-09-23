@@ -9,9 +9,12 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class ProductoDTO {
-    private String idProducto;
+    private String id;
     private Integer cantidad;
-    private BigDecimal precio;
+    private BigDecimal valor;
     private Long idCarrito;
+    private String dije;
+    private String material;
+    private String tipo;
 
 }

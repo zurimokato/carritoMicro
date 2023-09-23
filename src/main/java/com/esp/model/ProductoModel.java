@@ -15,9 +15,12 @@ import java.math.BigDecimal;
 @Setter
 public class ProductoModel implements Serializable {
     @Id
-    private String idProducto;
+    private String id;
     private Integer cantidad;
-    private BigDecimal precio;
+    private BigDecimal valor;
+    private String dije;
+    private String material;
+    private String tipo;
     @ManyToOne
     private CarritoModel carrito;
 }

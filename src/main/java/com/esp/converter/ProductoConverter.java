@@ -18,12 +18,17 @@ public class ProductoConverter {
         }
         try {
             log.debug("EntidadHashcode: "+ entity.hashCode());
+            productoDTO.setIdCarrito(entity.getCarrito().getIdentificadorCarrito());
+            productoDTO.setId(entity.getId());
+            productoDTO.setCantidad(entity.getCantidad());
+            productoDTO.setMaterial(entity.getMaterial());
+            productoDTO.setDije(entity.getDije());
+            productoDTO.setTipo(entity.getTipo());
+            productoDTO.setValor(entity.getValor());
         }catch(EntityNotFoundException e) {
             throw new EntityNotFoundException("Parametro de entrada nula, registro no localizado con los datos suministrados");
         }
-        productoDTO.setIdCarrito(entity.getCarrito().getIdentificadorCarrito());
-        productoDTO.setIdProducto(entity.getIdProducto());
-        productoDTO.setCantidad(entity.getCantidad());
+
 
 
         return productoDTO;
